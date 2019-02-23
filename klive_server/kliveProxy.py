@@ -5,8 +5,6 @@ sys.setdefaultencoding('utf-8')
 sys.path.append(os.path.join( os.getcwd(), 'lib' ))
 
 from klive import *
-from gevent import monkey; monkey.patch_all()
-from gevent.pywsgi import WSGIServer
 from flask import Flask, Response, request, jsonify, abort, render_template, redirect
 import time, requests, thread
 
@@ -133,8 +131,13 @@ def server_m3upipe():
 
 if __name__ == '__main__':
 	t = thread.start_new_thread(thread_main,())
-	
-	print ('WSGIServer start..')
-	http = WSGIServer(('0.0.0.0', BIND_PORT), app.wsgi_app)
-	http.serve_forever()
+	try:
+		from gevent import monkey; monkey.patch_all()
+		from gevent.pywsgi import WSGIServer
+		print ('WSGIServer start..')
+		http = WSGIServer(('0.0.0.0', BIND_PORT), app.wsgi_app)
+		http.serve_forever()
+	except:
+		app.run(host='0.0.0.0', port=BIND_PORT, debug=False)
+
 
