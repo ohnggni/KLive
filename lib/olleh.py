@@ -3,7 +3,7 @@ from util import *
 
 class OLLEH:
 	COOKIE_FILENAME = 'olleh2.txt'
-	USER_AGENT = 'OMS (compatible;ServiceType/OTM;DeviceType/WIN8PAD;DeviceModel/AllSeries;OSType/WINM;OSVersion/8.1.0;AppVersion/1.2.1.9))'
+	USER_AGENT = 'OMS (compatible;ServiceType/OTM;DeviceType/WIN8PAD;DeviceModel/AllSeries;OSType/WINM;OSVersion/8.1.0;AppVersion/1.2.1.9)'
 
 	# Login
 	def DoLoginFromSC(self, id, pw):
