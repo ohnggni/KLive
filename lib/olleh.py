@@ -3,7 +3,7 @@ from util import *
 
 class OLLEH:
 	COOKIE_FILENAME = 'olleh2.txt'
-	USER_AGENT = 'OMS (compatible;ServiceType/OTM;DeviceType/WIN8PAD;DeviceModel/AllSeries;OSType/WINM;OSVersion/8.1.0;AppVersion/1.2.1.9)'
+	USER_AGENT = 'OMS (compatible;ServiceType/OTM;DeviceType/iPhone;DeviceModel/iPhone13,4;OSType/iPhoneOS;OSVersion/14.2.1;AppVersion/6.3.1)'
 
 	# Login
 	def DoLoginFromSC(self, id, pw):
@@ -34,7 +34,7 @@ class OLLEH:
 			autoLoginYn = content['accList'][0]['regYn']
 						
 			url = 'https://omas.megatvdnp.co.kr/login/device/prov'
-			params = {'toknVal': toknVal, 'svcUniqId': svcUniqId, 'circuitSaid': circuitSaid, 'termlUserAgent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36', 'termlDeviceId': '224B29B0FD52', 'autoLoginYn': autoLoginYn, 'appDivCd': 'MOBILE_AND'}
+			params = {'toknVal': toknVal, 'svcUniqId': svcUniqId, 'circuitSaid': circuitSaid, 'termlUserAgent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Mobile/15E148 Safari/604.1', 'termlDeviceId': '224B29B0FD52', 'autoLoginYn': autoLoginYn, 'appDivCd': 'MOBILE_AND'}
 
 			cj = cookielib.CookieJar()
 			cookieprocessor = urllib2.HTTPCookieProcessor(cj)
