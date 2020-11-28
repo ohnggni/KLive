@@ -295,7 +295,7 @@ def main():
 		id = sys.argv[3]
 		ret = GetURL(type, id)
 	elif mode == 'epg':
-		ret = MakeEPG(sys.argv[2])
+		ret = MakeEPG(sys.argv[1])
 	if ret is not None:
 		print(ret)
 
